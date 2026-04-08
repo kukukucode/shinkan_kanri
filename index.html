@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者画面</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Apple Style Header -->
+        <header class="top-nav">
+            <div class="nav-content">
+                <div class="nav-left">
+                    <button class="hamburger-btn" id="menuToggle" aria-label="メニューを開く">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="nav-header">
+                        <h1>新歓参加管理</h1>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <!-- Optional: Search or Status could go here -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Slide-out Menu for Dates -->
+        <nav class="side-menu" id="sideMenu">
+            <div class="menu-list" id="dateList">
+                <div class="loading-spinner">読み込み中...</div>
+            </div>
+        </nav>
+
+        <!-- Main Dashboard View -->
+        <main class="main-content">
+            <div class="view-header">
+                <p id="currentDateTitle" class="view-title">日付を選択してください</p>
+            </div>
+
+            <div class="participant-list" id="participantGrid">
+                <div class="empty-state">
+                    <p>左上のメニューから日付を選択してください。</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- UI Templates -->
+    <template id="dateCardTemplate">
+        <button class="date-card">
+            <div class="date-card-title"></div>
+            <div class="date-card-stats">
+                <div class="stat-badge count-badge">
+                    <span class="count-val"></span>
+                </div>
+                <div class="stat-badge racket-badge">
+                    <span class="racket-val"></span>
+                </div>
+                <div class="stat-badge capacity-badge">
+                    <span class="capacity-val"></span>
+                </div>
+            </div>
+        </button>
+    </template>
+
+    <template id="participantCardTemplate">
+        <div class="participant-list-item">
+            <div class="item-main">
+                <h3 class="participant-name"></h3>
+                <span class="participant-univ"></span>
+            </div>
+            <div class="item-socials">
+                <div class="info-row">
+                    <span class="info-label">LINE</span>
+                    <span class="info-value line-name"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Instagram</span>
+                    <span class="info-value insta-id"></span>
+                </div>
+                <div class="info-row experience-container">
+                    <span class="info-label">テニス歴</span>
+                    <span class="info-value experience-val"></span>
+                </div>
+                <div class="info-row remarks-container">
+                    <span class="info-label">備考</span>
+                    <span class="info-value remarks-text"></span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
