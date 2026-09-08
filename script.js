@@ -1,5 +1,5 @@
-const CSV_URL_MAIN = "https://docs.google.com/spreadsheets/d/1rT7JJC8TRocZUpIgAXGPWsFHu5E3gSUG3BD12WoJG1Q/export?format=csv";
-const CSV_URL_LIST = "https://docs.google.com/spreadsheets/d/1rT7JJC8TRocZUpIgAXGPWsFHu5E3gSUG3BD12WoJG1Q/gviz/tq?tqx=out:csv&sheet=list";
+const CSV_URL_MAIN = "https://docs.google.com/spreadsheets/d/example/export?format=csv";
+const CSV_URL_LIST = "https://docs.google.com/spreadsheets/d/example/gviz/tq?tqx=out:csv&sheet=list";
 
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
